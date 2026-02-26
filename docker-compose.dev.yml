@@ -1,0 +1,20 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: paybridge-product-svc-dev
+    volumes:
+      - .:/app
+    ports:
+      - "8083:8083"
+    env_file:
+      - .env
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    networks:
+      - paybridge_network
+
+networks:
+  paybridge_network:
+    external: true
