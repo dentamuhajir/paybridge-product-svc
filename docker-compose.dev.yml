@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    container_name: paybridge-product-svc-dev
+    container_name: paybridge-product-svc
     volumes:
       - .:/app
     ports:
